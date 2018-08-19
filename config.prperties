@@ -1,0 +1,6 @@
+#Wed Mar 04 20:46:23 EET 2015
+#Wed Mar 04 20:46:23 EET 2015
+dburl=jdbc\:mysql\://localhost\:3306/test17
+dbusername=root
+dbpassword=free
+dbdrivername=com.mysql.jdbc.Driver
