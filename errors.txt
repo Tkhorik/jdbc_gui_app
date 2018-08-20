@@ -1,8 +1,0 @@
-java.lang.NullPointerException
-	at com.application.framecujdbc.dao.impl.DepartamentDaoImpl.findAll(DepartamentDaoImpl.java:53)
-	at com.application.framecujdbc.gui.models.DepartamenteListModel.<init>(DepartamenteListModel.java:32)
-	at com.application.framecujdbc.gui.DepartamentePanel.initComponents(DepartamentePanel.java:83)
-	at com.application.framecujdbc.gui.DepartamentePanel.<init>(DepartamentePanel.java:54)
-	at com.application.framecujdbc.gui.MyFrame.initCompnents(MyFrame.java:169)
-	at com.application.framecujdbc.gui.MyFrame.<init>(MyFrame.java:94)
-	at com.application.framecujdbc.gui.Main.main(Main.java:11)
