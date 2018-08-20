@@ -1,2 +1,5 @@
 .idea
 /mylibs/mylibs.iml
+/artifacts
+errors.txt
+/src/main/java/META-INF/MANIFEST.MF
