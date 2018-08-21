@@ -74,19 +74,14 @@ class MyFrame extends JFrame {
     AngajatiTableModel angajatiTableModel;
 
     public MyFrame() {
-
         initCompnents();
         initModels();
         addListeners();
-
-
     }
 
     private void initModels() {
         angajatiTableModel = new AngajatiTableModel();
         jTableAngajati.setModel(angajatiTableModel);
-
-
     }
 
     private void initCompnents() {
@@ -210,7 +205,7 @@ class MyFrame extends JFrame {
                     MyDataSource dataSource = MyDataSource.getInstance();
                     conn = dataSource.getConnection();
                     if (conn != null) {
-                        ArataText.showMesaj(rootPane, "Database connection established", "Success", true);
+                        ShowMessage.showMessage(rootPane, "Database connection established", "Success", true);
 
                         angajatiPanel.setButoaneAcesibile(true);
                         departamentePanel.setButoaneAcesibile(true);
@@ -227,7 +222,7 @@ class MyFrame extends JFrame {
                     }
                 } catch (Exception ex) {
                     Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
-                    ArataText.showMesaj(rootPane, ex.getMessage(), "Error", false);
+                    ShowMessage.showMessage(rootPane, ex.getMessage(), "Error", false);
                 }
             }
         });
@@ -240,11 +235,11 @@ class MyFrame extends JFrame {
                     Connection conn = dataSource.getConnection();
                     if (conn != null && !conn.isClosed()) {
                         conn.close();
-                        ArataText.showMesaj(rootPane, "database connection has been disconnected", "Success", true);
+                        ShowMessage.showMessage(rootPane, "database connection has been disconnected", "Success", true);
                     }
                 } catch (Exception ex) {
                     Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
-                    ArataText.showMesaj(rootPane, ex.getMessage() + "\nMaybe connection has not been established correctly", "Error", false);
+                    ShowMessage.showMessage(rootPane, ex.getMessage() + "\nMaybe connection has not been established correctly", "Error", false);
                 }
             }
         });
@@ -259,7 +254,7 @@ class MyFrame extends JFrame {
                     arataLista(listaAngajati);
                 } catch (Exception ex) {
                     Logger.getLogger(MyFrame.class.getName()).log(Level.SEVERE, null, ex);
-                    ArataText.showMesaj(rootPane, ex.getMessage(), "Error", false);
+                    ShowMessage.showMessage(rootPane, ex.getMessage(), "Error", false);
                 }
             }
         });

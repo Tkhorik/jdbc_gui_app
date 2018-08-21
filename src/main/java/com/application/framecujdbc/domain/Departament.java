@@ -70,12 +70,12 @@ public class Departament {
     
    
     public String toFullString() {
-        return "Departament{" + "id=" + id + ", denumire=" + denumire + ", angajati="+ setToString(angajati) + '}';
+        return "Department{" + "id=" + id + ", denumire=" + denumire + ", angajati="+ setToString(angajati) + '}';
     }
 
     private String setToString(Set<Angajat> angajati) {
        StringBuilder sb=new StringBuilder();
-       sb.append("lista angajatilor din departamentul "+denumire+":");
+       sb.append("employers list from all departments "+denumire+":");
         for (Angajat ang : angajati) {
             sb.append(ang);
             sb.append("\n");

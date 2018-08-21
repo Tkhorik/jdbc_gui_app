@@ -12,7 +12,7 @@ import java.util.Vector;
  */
 public class AngajatiTableModel extends DefaultTableModel {
 
-    private String[] columnNames = {"#", "ID", "Numele", "Prenumele", "Salariu (MDL)", "Departamentul"};
+    private String[] columnNames = {"#", "ID", "Name", "Surname", "Salary", "Department"};
 
     public AngajatiTableModel() {
 
@@ -46,9 +46,7 @@ public class AngajatiTableModel extends DefaultTableModel {
             row.add(angajat.getDepartament().getDenumire());
 
             super.addRow(row);
-
         }
-
     }
 
     public void refreshData() {
@@ -65,7 +63,5 @@ public class AngajatiTableModel extends DefaultTableModel {
         row.add("");
 
         super.addRow(row);
-
     }
-
 }

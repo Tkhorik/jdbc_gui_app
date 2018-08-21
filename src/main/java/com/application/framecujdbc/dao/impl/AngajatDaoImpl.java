@@ -48,11 +48,11 @@ public class AngajatDaoImpl implements AngajatDaoIntf {
         } catch (Exception e) {
             LOG.severe(e.toString());
             e.printStackTrace(new PrintStream(new FileOutputStream ("errors.txt"), true));
-            throw new Exception("exceptie la obtinerea listei angajatilor.. ");
+            throw new Exception("can't get user info list query. Verify connection");
         }
-
         return listaAngajati;
     }
+
     private static final Logger LOG = Logger.getLogger(AngajatDaoImpl.class.getName());
 
     @Override
@@ -165,8 +165,8 @@ public class AngajatDaoImpl implements AngajatDaoIntf {
         
         try {
            
-            String sql = "SELECT * FROM ANGAJAT  WHERE nume LIKE ? AND prenume LIKE ? AND slariu > ?"; //SQL 
-            
+            String sql = "SELECT * FROM ANGAJAT  WHERE nume LIKE ? AND prenume LIKE ? AND slariu > ?"; //SQL
+
             Departament departament =angajat.getDepartament();
             boolean hasDepartament=false;
             if( departament !=null && departament.getId() > 0){

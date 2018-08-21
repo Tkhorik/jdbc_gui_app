@@ -6,15 +6,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- *
  * @author iurasun
  */
 public class MyDataSource {
 
-   
-   private DbProperties dbProperties;// = new DbProperties();// din loadP()
-   private Connection connection; 
-   
+
+    private DbProperties dbProperties;// = new DbProperties();// din loadP()
+    private Connection connection;
+
     //singleton
     private static MyDataSource instance;
 
@@ -28,52 +27,48 @@ public class MyDataSource {
 
     private MyDataSource() throws ClassNotFoundException, IOException {
 
-    
-            // pentru testare singleton
-            System.out.println("s-a creat un obiect");
-            id = ++contor;
-            //////////////////
-            
-            
-            loadProperties();
-            System.out.println("proprietatile incarcate cu succes");
-            
-            Class.forName(dbProperties.getDbdrivername());
-            System.out.println("driver incarcat cu suuces!");
-        
+
+        // pentru testare singleton
+        System.out.println("s-a creat un obiect");
+        id = ++contor;
+        //////////////////
+
+
+        loadProperties();
+        System.out.println("proprietatile incarcate cu succes");
+
+        Class.forName(dbProperties.getDbdrivername());
+        System.out.println("driver incarcat cu suuces!");
+
     }
     //end singleton
-  
+
 
     private void loadProperties() throws IOException {
-     //de facut!!!!
-        
-        DbPropertiesUtil propsService=DbPropertiesUtil.getInstance();
-       
+        //de facut!!!!
+
+        DbPropertiesUtil propsService = DbPropertiesUtil.getInstance();
+
         dbProperties = propsService.citeste(Constants.PROPS_FILE_NAME);
-        
+
     }
 
     public Connection getConnection() throws SQLException {
-        if(connection == null || connection.isClosed()){
+        if (connection == null || connection.isClosed()) {
             createConnection();
         }
-        
+
         return connection;
-        
+
     }
 
     private void createConnection() throws SQLException {
-      
-      connection = DriverManager.getConnection(dbProperties.getDburl(),
-                                    dbProperties.getDbusername(), 
-                                    dbProperties.getDbpassword());
+
+        connection = DriverManager.getConnection(dbProperties.getDburl(),
+                dbProperties.getDbusername(),
+                dbProperties.getDbpassword());
     }
-    
-    
-    
-    
-    
+
     // pentru testare singleton
     private static int contor;
     private int id;
@@ -81,5 +76,4 @@ public class MyDataSource {
     public int getId() {
         return id;
     }
-
 }

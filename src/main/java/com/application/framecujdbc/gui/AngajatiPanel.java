@@ -87,10 +87,10 @@ public class AngajatiPanel extends JPanel {
                 angajatiDao.save(readForm());
                 try {
                     angajatiTableModel.refreshData(angajatiDao.findAll());
-                        ArataText.showMesaj(AngajatiPanel.this, "Angajat adaugat cu succes.", "Succes", true);
+                        ShowMessage.showMessage(AngajatiPanel.this, "Angajat adaugat cu succes.", "Succes", true);
                 } catch (Exception ex) {
                     Logger.getLogger(AngajatiPanel.class.getName()).log(Level.SEVERE, null, ex);
-                        ArataText.showMesaj(AngajatiPanel.this, "Angajat nu a fost adaugat." +ex, "Error", true);
+                        ShowMessage.showMessage(AngajatiPanel.this, "Angajat nu a fost adaugat." +ex, "Error", true);
                 }
             }
         });
@@ -108,7 +108,7 @@ public class AngajatiPanel extends JPanel {
                         if (angajat != null) {
                             fillForm(angajat);
                         } else {
-                            ArataText.showMesaj(AngajatiPanel.this, "Nu este Angajat cu id=" + id, "Error", false);
+                            ShowMessage.showMessage(AngajatiPanel.this, "Nu este Angajat cu id=" + id, "Error", false);
                         }
                     } else {
                         Angajat angajat = readForm();
@@ -123,7 +123,7 @@ public class AngajatiPanel extends JPanel {
 
                 } catch (Exception ex) {
                     Logger.getLogger(AngajatiPanel.class.getName()).log(Level.SEVERE, null, ex);
-                    ArataText.showMesaj(AngajatiPanel.this, "Nu este Angajat " + ex.getMessage(), "Error", false);
+                    ShowMessage.showMessage(AngajatiPanel.this, "Nu este Angajat " + ex.getMessage(), "Error", false);
                 }
             }
         });
@@ -154,13 +154,13 @@ public class AngajatiPanel extends JPanel {
 
                         angajatiDao.update(angajat);
 
-                        ArataText.showMesaj(AngajatiPanel.this, "Angajat modificat cu succes.", "Succes", true);
+                        ShowMessage.showMessage(AngajatiPanel.this, "Angajat modificat cu succes.", "Succes", true);
                         angajatiTableModel.refreshData(angajatiDao.findAll());
                     }
 
                 } catch (Exception ex) {
                     Logger.getLogger(AngajatiPanel.class.getName()).log(Level.SEVERE, null, ex);
-                    ArataText.showMesaj(AngajatiPanel.this, "Angajat Nu a fost modificat " + ex.getMessage(), "Error", false);
+                    ShowMessage.showMessage(AngajatiPanel.this, "Angajat Nu a fost modificat " + ex.getMessage(), "Error", false);
                 }
             }
         });
@@ -176,13 +176,13 @@ public class AngajatiPanel extends JPanel {
 
                         angajatiDao.delete(angajat);
 
-                        ArataText.showMesaj(AngajatiPanel.this, "Angajat sters cu succes.", "Succes", true);
+                        ShowMessage.showMessage(AngajatiPanel.this, "Angajat sters cu succes.", "Succes", true);
                         angajatiTableModel.refreshData(angajatiDao.findAll());
                     }
 
                 } catch (Exception ex) {
                     Logger.getLogger(AngajatiPanel.class.getName()).log(Level.SEVERE, null, ex);
-                    ArataText.showMesaj(AngajatiPanel.this, "Angajat Nu a fost sters " + ex.getMessage(), "Error", false);
+                    ShowMessage.showMessage(AngajatiPanel.this, "Angajat Nu a fost sters " + ex.getMessage(), "Error", false);
                 }
             }
         });

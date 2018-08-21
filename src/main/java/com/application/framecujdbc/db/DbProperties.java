@@ -9,7 +9,7 @@ public class DbProperties  {
     private String dburl = "jdbc:mysql://localhost:3306/test19";
     private String dbusername = "root";
     private String dbpassword = "free";
-    private String dbdrivername = "com.mysql.jdbc.Driver";
+    private String dbdrivername = "com.mysql.cj.jdbc.Driver";
 
     public DbProperties() {
     }

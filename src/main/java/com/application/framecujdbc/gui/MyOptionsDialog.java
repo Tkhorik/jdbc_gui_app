@@ -74,9 +74,9 @@ class MyOptionsDialog extends JDialog {
             props.setDbpassword(new String(jTextFieldPassword.getPassword()));
 
             DbPropertiesUtil.getInstance().setTheRecordInPropertieFile(props, Constants.PROPS_FILE_NAME);
-            ArataText.showMesaj(this, "New password has been set", "Succes", true);
+            ShowMessage.showMessage(this, "New password has been set", "Succes", true);
         } catch (IOException ex) {
-            ArataText.showMesaj(this, "An error has occurred, The record has not been set ", "Error", false);
+            ShowMessage.showMessage(this, "An error has occurred, The record has not been set ", "Error", false);
         }
         this.dispose();
     }

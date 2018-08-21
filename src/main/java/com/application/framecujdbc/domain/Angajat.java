@@ -2,7 +2,6 @@
 package com.application.framecujdbc.domain;
 
 /**
- *
  * @author iurasun
  */
 public class Angajat {
@@ -13,14 +12,14 @@ public class Angajat {
     private Departament departament;
 
     public Angajat() {
-        departament=new Departament();
+        departament = new Departament();
     }
 
     public Angajat(String nume, String prenume, int salariu) {
         this.nume = nume;
         this.prenume = prenume;
         this.salariu = salariu;
-                departament=new Departament();
+        departament = new Departament();
     }
 
     public Angajat(int id, String nume, String prenume, int salariu) {
@@ -28,17 +27,17 @@ public class Angajat {
         this.nume = nume;
         this.prenume = prenume;
         this.salariu = salariu;
-                departament=new Departament();
+        departament = new Departament();
     }
 
-      public Angajat(String nume, String prenume, int salariu, Departament departament) {
-     
+    public Angajat(String nume, String prenume, int salariu, Departament departament) {
+
         this.nume = nume;
         this.prenume = prenume;
         this.salariu = salariu;
         this.departament = departament;
     }
-    
+
     public Angajat(int id, String nume, String prenume, int salariu, Departament departament) {
         this.id = id;
         this.nume = nume;
@@ -46,8 +45,7 @@ public class Angajat {
         this.salariu = salariu;
         this.departament = departament;
     }
-    
-    
+
 
     public int getSalariu() {
         return salariu;
@@ -95,7 +93,7 @@ public class Angajat {
     }
 
     public String toShortString() {
-        return "Angajat{" + "id=" + id + ", nume=" + nume + ", prenume=" + prenume + ", salariu=" + salariu + ", departament=" + departament.getDenumire()+'}';
+        return "Angajat{" + "id=" + id + ", nume=" + nume + ", prenume=" + prenume + ", salariu=" + salariu + ", departament=" + departament.getDenumire() + '}';
     }
-    
+
 }

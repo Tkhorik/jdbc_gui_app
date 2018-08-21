@@ -97,12 +97,12 @@ public class DepartamentePanel extends JPanel{
                     departamentiDao.save(departament);
                     departamenteListModel = new DepartamenteListModel();
                     lista.setModel(departamenteListModel);
-                          ArataText.showMesaj(DepartamentePanel.this, "Departament adaugat cu succes.", "Succes", true);
+                          ShowMessage.showMessage(DepartamentePanel.this, "Departament adaugat cu succes.", "Succes", true);
                     }
                     
                 } catch (Exception ex) {
                     Logger.getLogger(DepartamentePanel.class.getName()).log(Level.SEVERE, null, ex);
-                     ArataText.showMesaj(DepartamentePanel.this, "Departament nu a fost adaugat."+ex, "Eroor", true);
+                     ShowMessage.showMessage(DepartamentePanel.this, "Departament nu a fost adaugat."+ex, "Eroor", true);
                 }
             }
         });
@@ -120,7 +120,7 @@ public class DepartamentePanel extends JPanel{
                         if (departament != null) {
                             fillForm(departament);
                         } else {
-                            ArataText.showMesaj(DepartamentePanel.this, "Nu este Departament cu id=" + id, "Error", false);
+                            ShowMessage.showMessage(DepartamentePanel.this, "Nu este Departament cu id=" + id, "Error", false);
                         }
                     } else {
                         Departament departament = readForm();
@@ -134,7 +134,7 @@ public class DepartamentePanel extends JPanel{
 
                 } catch (Exception ex) {
                     Logger.getLogger(DepartamentePanel.class.getName()).log(Level.SEVERE, null, ex);
-                    ArataText.showMesaj(DepartamentePanel.this, "Nu este Departament " + ex.getMessage(), "Error", false);
+                    ShowMessage.showMessage(DepartamentePanel.this, "Nu este Departament " + ex.getMessage(), "Error", false);
                 }
             }
         });
@@ -163,7 +163,7 @@ public class DepartamentePanel extends JPanel{
                         
                         departamentiDao.update(departament);
 
-                        ArataText.showMesaj(DepartamentePanel.this, "Departament modificat cu succes.", "Succes", true);
+                        ShowMessage.showMessage(DepartamentePanel.this, "Departament modificat cu succes.", "Succes", true);
                         departamenteListModel = new DepartamenteListModel();
                         lista.setModel(departamenteListModel);
                     }
@@ -171,7 +171,7 @@ public class DepartamentePanel extends JPanel{
                    
                 } catch (Exception ex) {
                     Logger.getLogger(DepartamentePanel.class.getName()).log(Level.SEVERE, null, ex);
-                    ArataText.showMesaj(DepartamentePanel.this, "Departament Nu a fost modificat " + ex.getMessage(), "Error", false);
+                    ShowMessage.showMessage(DepartamentePanel.this, "Departament Nu a fost modificat " + ex.getMessage(), "Error", false);
                    
                 }
             }
@@ -188,7 +188,7 @@ public class DepartamentePanel extends JPanel{
 
                         departamentiDao.delete(departament);
 
-                        ArataText.showMesaj(DepartamentePanel.this, "Departament sters cu succes.", "Succes", true);
+                        ShowMessage.showMessage(DepartamentePanel.this, "Departament sters cu succes.", "Succes", true);
                         
                         departamenteListModel = new DepartamenteListModel();
                         lista.setModel(departamenteListModel);
@@ -197,7 +197,7 @@ public class DepartamentePanel extends JPanel{
 
                 } catch (Exception ex) {
                     Logger.getLogger(DepartamentePanel.class.getName()).log(Level.SEVERE, null, ex);
-                    ArataText.showMesaj(DepartamentePanel.this, "Departament Nu a fost sters " + ex.getMessage(), "Error", false);
+                    ShowMessage.showMessage(DepartamentePanel.this, "Departament Nu a fost sters " + ex.getMessage(), "Error", false);
                 }
                 
                 
