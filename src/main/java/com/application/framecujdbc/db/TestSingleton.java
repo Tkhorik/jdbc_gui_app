@@ -10,13 +10,11 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * @author iurasun
- */
+
 public class TestSingleton {
     public static void main(String[] args) throws SQLException, IOException {
         try {
-            System.out.println("apel 1");
+            System.out.println("try# 1");
             MyDataSource dataSource = MyDataSource.getInstance();
 
 

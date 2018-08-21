@@ -11,9 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-/**
- * @author iurasun
- */
+
 class MyOptionsDialog extends JDialog {
 
     private JTextField jTextFieldUrl = new JTextField();
@@ -46,8 +44,8 @@ class MyOptionsDialog extends JDialog {
         JLabel jLabelTitlu = new JLabel();
 
         jLabelTitlu.setForeground(Color.red);
-        jLabelTitlu.setFont(new Font("Arial", Font.BOLD, 36));
-        jLabelTitlu.setText("Panou de redactare a proprietatilor DB");
+        jLabelTitlu.setFont(new Font("Arial", Font.BOLD, 24));
+        jLabelTitlu.setText("Form for edit DB connection credentials");
 
 
         add("center", jLabelTitlu);
@@ -75,10 +73,10 @@ class MyOptionsDialog extends JDialog {
             props.setDbusername(jTextFieldUser.getText());
             props.setDbpassword(new String(jTextFieldPassword.getPassword()));
 
-            DbPropertiesUtil.getInstance().scrie(props, Constants.PROPS_FILE_NAME);
-            ArataText.showMesaj(this, "Salvat in fisier cu succes", "Succes", true);
+            DbPropertiesUtil.getInstance().setTheRecordInPropertieFile(props, Constants.PROPS_FILE_NAME);
+            ArataText.showMesaj(this, "New password has been set", "Succes", true);
         } catch (IOException ex) {
-            ArataText.showMesaj(this, "Eroare la salvare", "Error", false);
+            ArataText.showMesaj(this, "An error has occurred, The record has not been set ", "Error", false);
         }
         this.dispose();
     }

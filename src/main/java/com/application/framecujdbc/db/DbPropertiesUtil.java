@@ -32,7 +32,7 @@ public class DbPropertiesUtil {
             
 //end sigleton
     
-    public  void scrie(DbProperties dbProperties, String fileName) throws IOException{
+    public  void setTheRecordInPropertieFile(DbProperties dbProperties, String fileName) throws IOException{
             
         Properties props=new Properties();
         

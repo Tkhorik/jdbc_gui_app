@@ -7,9 +7,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * @author iurasun
- */
+
 public class FileTextUtil {
 
     public static void writeTextToFile(String text, String fileName) {
