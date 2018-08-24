@@ -31,7 +31,6 @@ public class Angajat {
     }
 
     public Angajat(String nume, String prenume, int salariu, Departament departament) {
-
         this.nume = nume;
         this.prenume = prenume;
         this.salariu = salariu;

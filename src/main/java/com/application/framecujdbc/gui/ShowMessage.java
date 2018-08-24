@@ -13,9 +13,6 @@ public class ShowMessage {
 
         if (isInformation) {
             JOptionPane.showMessageDialog(component, text, title, JOptionPane.INFORMATION_MESSAGE);
-        }
-        if (!isInformation) {
-            JOptionPane.showMessageDialog(component, text, title, JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(component, text, title, JOptionPane.ERROR_MESSAGE);
         }
@@ -23,7 +20,6 @@ public class ShowMessage {
     }
 
     public static void main(String[] args) {
-        showMessage(null, "Test text in alert window", "Title for window", true);  // get from static variable
         showMessage(null, "Test text in alert window", "Title for window", true);  // get from static variable
         ShowMessage.showMessage(null, "Text for information window!!!", "Title for information window!!!", false); //just for testing added? should be removed from showMessage method
     }
